@@ -1,211 +1,73 @@
-# Curso de datascience con Python
+# 📊 Curso de Data Science con Python
 
 - Profesor: Dr. Emiliano López
 
-## 📘 Instalación de Python para el curso de Data Science
-
-Estas instrucciones permiten instalar todo lo necesario para trabajar con Python y GeoPandas **sin errores** en Windows.
-
----
-
-### 1️⃣ Descargar e instalar Miniforge
-
-1. Abrir este enlace:  
-   👉 [https://github.com/conda-forge/miniforge/releases/latest](https://github.com/conda-forge/miniforge/releases/latest)
-2. Buscar el instalador para Windows:  
-   **`Miniforge3-Windows-x86_64.exe`**  
-   *(No el `.zip`, no el de ARM)*
-3. Hacer doble clic en el archivo descargado y seguir estos pasos:
-   - Cuando pregunte “Add Miniforge3 to PATH?”, dejar la opción **NO marcada**.
-   - Dejar marcada la opción **Register Miniforge3 as my default Python**.
-   - Aceptar y terminar la instalación.
+Este curso está orientado a introducir y aplicar herramientas modernas de **ciencia de datos** utilizando el ecosistema de Python.  
+A lo largo del curso, los participantes aprenderán a **procesar, analizar y visualizar datos** de manera efectiva, integrando buenas prácticas de programación y flujo de trabajo reproducible.
 
 ---
 
-### 2️⃣ Descargar el archivo del entorno del curso
+## 🛠 Contenidos principales
 
-1. El profesor les dará un archivo llamado `environment.yml`.
-2. Guardar este archivo en una carpeta fácil de encontrar, por ejemplo:  
-   `C:\curso_ds`
+- **Fundamentos de Python para Data Science**  
+  Uso de estructuras de datos, funciones, entornos virtuales y manejo de librerías.
 
----
+- **ETL: Extracción, Transformación y Carga de Datos**  
+  - Lectura y escritura de datos desde múltiples formatos (CSV, Parquet, JSON, Excel, etc.).  
+  - Limpieza y transformación de datos para su análisis.  
+  - Integración de distintas fuentes de datos.
 
-### 3️⃣ Crear el entorno del curso
+- **Análisis de Datos**  
+  - Manejo y exploración de datos con **Pandas** y **Polars**.  
+  - Filtrado, agregaciones, combinaciones y operaciones vectorizadas.  
+  - Optimización del rendimiento en el procesamiento.
 
-1. Abrir el menú Inicio de Windows.
-2. Buscar y abrir **Miniforge Prompt** (es como una ventana negra con texto).
-3. En la ventana, escribir (y luego Enter):
+- **Visualización de Datos**  
+  - Creación de gráficos interactivos con **Plotly**.  
+  - Diagramas de dispersión, líneas, barras, mapas y dashboards básicos.  
+  - Personalización de visualizaciones para comunicar resultados.
 
-   ```bash
-   cd C:\curso_ds
-   ```
+- **Introducción a Datos Geoespaciales** *(módulo breve)*  
+  - Fundamentos del formato geoespacial.  
+  - Lectura, exploración y manipulación básica con **GeoPandas**.  
+  - Integración de capas geográficas en visualizaciones interactivas.
 
-4. Crear el entorno del curso con:
-
-   ```bash
-   conda env create -f environment.yml
-   ```
-
-📌 **Este paso puede tardar varios minutos** dependiendo de la conexión a Internet.  
-Es normal que aparezca mucha información en pantalla.
-
----
-
-### 4️⃣ Activar el entorno y abrir JupyterLab
-
-1. En la misma ventana, escribir:
-
-   ```bash
-   conda activate curso_ds
-   ```
-
-2. Luego abrir JupyterLab con:
-
-   ```bash
-   jupyter lab
-   ```
-
-3. Se abrirá una ventana en el navegador.  
-   Allí podrán crear y ejecutar notebooks de Python.
+- **Entornos de trabajo en Data Science**  
+  - Uso de entornos interactivos comúnmente utilizados en ciencia de datos, como los **Notebooks**.  
+  - Trabajo con **JupyterLab**, el entorno más popular para análisis y experimentación.  
+  - Exploración de **Marimo**, una alternativa moderna que incorpora los últimos avances en notebooks interactivos y reproducibles.
 
 ---
 
-### 5️⃣ Cómo usarlo en el futuro
+## 📥 Instalación y preparación del entorno
 
-Cada vez que quieran trabajar en el curso:
-
-1. Abrir **Miniforge Prompt**.
-2. Activar el entorno:
-
-   ```bash
-   conda activate curso_ds
-   ```
-
-3. Abrir JupyterLab:
-
-   ```bash
-   jupyter lab
-   ```
+Para poder seguir el curso en tu computadora, consulta las instrucciones detalladas en el archivo:  
+[📄 install-howto.md](install-howto.md)
 
 ---
 
-✅ **Con esto tendrán todo listo para trabajar en el curso sin problemas de instalación**.
+## 🎯 Objetivos del curso
 
-
-## 🐧 Instalación de Miniforge y entorno del curso en Linux
-
-Estas instrucciones están pensadas para usuarios Linux que ya manejan entornos de Python, pero que quieren aislar `conda` para un curso sin interferir con su entorno habitual (por ejemplo, `uv`, `pyenv`, `virtualenv`).
-
----
-
-### 1️⃣ Descargar e instalar Miniforge en una carpeta aislada
-
-Recomendado instalarlo en una ruta propia, por ejemplo `~/miniforge_curso`:
-
-```bash
-wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
-bash Miniforge3-Linux-x86_64.sh
-```
-
-Cuando aparezca el mensaje:
-
-```
-Do you wish to update your shell profile to automatically initialize conda?
-This will activate conda on startup and change the command prompt when activated.
-If you'd prefer that conda's base environment not be activated on startup,
-   run the following command when conda is activated:
-
-conda config --set auto_activate_base false
-
-You can undo this by running `conda init --reverse $SHELL`? [yes|no]
-[no] >>>
-```
-
-**Elegir `no`** para evitar que `conda` modifique tu `~/.bashrc` o `~/.zshrc`.
-
-El instalador mostrará algo como:
-
-```
-You have chosen to not have conda modify your shell scripts at all.
-To activate conda's base environment in your current shell session:
-
-eval "$(/home/usuario/miniforge3/bin/conda shell.YOUR_SHELL_NAME hook)" 
-
-To install conda's shell functions for easier access, first activate, then:
-
-conda init
-
-Thank you for installing Miniforge3!
-```
+- Desarrollar habilidades prácticas para trabajar con datos de forma eficiente.  
+- Comprender y aplicar el flujo de trabajo ETL en proyectos reales.  
+- Crear visualizaciones claras y atractivas que respalden la toma de decisiones.  
+- Adquirir bases para trabajar con datos tabulares y geoespaciales.  
+- Conocer y utilizar diferentes entornos de desarrollo interactivos.
 
 ---
 
-### 2️⃣ Activar conda manualmente cuando sea necesario
+## 📦 Tecnologías y librerías utilizadas
 
-En lugar de tenerlo siempre activo, se carga sólo cuando se necesite:
-
-Si usas **bash**:
-```bash
-eval "$(/home/usuario/miniforge3/bin/conda shell.bash hook)"
-```
-
-Si usas **zsh**:
-```bash
-eval "$(/home/usuario/miniforge3/bin/conda shell.zsh hook)"
-```
+- **Python 3.11**  
+- **Pandas** y **Polars** para análisis de datos.  
+- **Plotly** para visualización interactiva.  
+- **GeoPandas** para manejo de datos geoespaciales.  
+- **JupyterLab** y **Marimo** como entornos de desarrollo.  
+- Herramientas de instalación y gestión de entornos con **Conda**.
 
 ---
 
-### 3️⃣ Crear el entorno del curso
+💡 **Nota:** No se requiere formación informática previa, pero sí conocimientos básicos de manejo de computadora. El curso está orientado a la práctica, con ejemplos y ejercicios aplicados.
 
-Asumiendo que tenés el archivo `environment.yml`:
-
-```bash
-conda env create -f environment.yml
-```
-
-Activar el entorno:
-```bash
-conda activate curso_ds
-```
-
----
-
-### 4️⃣ Abrir JupyterLab
-
-```bash
-jupyter lab
-```
-
----
-
-### 5️⃣ Desactivar el entorno
-
-```bash
-conda deactivate
-```
-
----
-
-### 6️⃣ Tip opcional: script de inicio rápido
-
-Podés crear un script `iniciar_curso.sh` para automatizar todo:
-
-```bash
-#!/bin/bash
-eval "$(/home/usuario/miniforge3/bin/conda shell.bash hook)"
-conda activate curso_ds
-jupyter lab
-```
-
-Dar permisos y ejecutarlo:
-```bash
-chmod +x iniciar_curso.sh
-./iniciar_curso.sh
-```
-
----
-
-✅ Con esto, `conda` queda completamente aislado y sólo se activa cuando vos lo decidís.
 
 
