@@ -77,3 +77,5 @@ Thumbs.db
 *.vscode/
 .idea/
 *.code-workspace
+Miniforge3-Linux-x86_64.sh
+activate_conda.sh
