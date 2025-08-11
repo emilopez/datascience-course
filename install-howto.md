@@ -11,7 +11,7 @@ Estas instrucciones permiten instalar todo lo necesario para trabajar con Python
 1. Abrir este enlace:  
    👉 [https://github.com/conda-forge/miniforge/releases/latest](https://github.com/conda-forge/miniforge/releases/latest)
 2. Buscar el instalador para Windows:  
-   **`Miniforge3-Windows-x86_64.exe`**  
+   **`Miniforge3-[VERSION]-Windows-x86_64.exe`**  
    *(No el `.zip`, no el de ARM)*
 3. Hacer doble clic en el archivo descargado y seguir estos pasos:
    - Cuando pregunte “Add Miniforge3 to PATH?”, dejar la opción **NO marcada**.
