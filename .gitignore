@@ -1,0 +1,79 @@
+# ======================================
+# Python general
+# ======================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dll
+*.dylib
+
+# Archivos de entorno virtual/conda
+.env
+.venv
+venv/
+ENV/
+env/
+*.conda
+*.lock
+*.yaml
+*.yml
+
+# ======================================
+# Archivos de Jupyter / Marimo
+# ======================================
+.ipynb_checkpoints
+.marimo/
+
+# ======================================
+# Archivos temporales y de logs
+# ======================================
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ======================================
+# Archivos generados por análisis / gráficos
+# ======================================
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.pdf
+*.html
+
+# ======================================
+# Datos temporales o grandes
+# ======================================
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.json
+*.geojson
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.sqlite
+*.gpkg
+*.zip
+*.gz
+*.bz2
+*.xz
+
+# ======================================
+# Archivos de configuración local
+# ======================================
+*.vscode/
+.idea/
+*.code-workspace
