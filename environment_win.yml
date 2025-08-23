@@ -1,0 +1,19 @@
+name: curso_ds_2025
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - jupyterlab
+  - matplotlib
+  - pandas
+  - polars
+  - plotly
+  - marimo
+  - scikit-learn
+  - geopandas
+  - folium
+  - pyogrio
+  - shapely
+  - pyproj
+  - pip
+
