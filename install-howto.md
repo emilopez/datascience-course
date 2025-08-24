@@ -22,7 +22,7 @@ Estas instrucciones permiten instalar todo lo necesario para trabajar con Python
 
 ### 2️⃣ Descargar el archivo del entorno del curso
 
-1. El profesor les dará un archivo llamado `environment.yml`.
+1. El profesor les dará un archivo llamado `environment_win.yml` (en caso de estar bajo gnu/linux usar environment.yml ).
 2. Guardar este archivo en una carpeta fácil de encontrar, por ejemplo:  
    `C:\curso_ds`
 
