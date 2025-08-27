@@ -54,7 +54,7 @@ Es normal que aparezca mucha información en pantalla.
 1. En la misma ventana, escribir:
 
    ```bash
-   conda activate curso_ds
+   conda activate curso_ds_2025
    ```
 
 2. Luego abrir JupyterLab con:
@@ -73,13 +73,18 @@ Es normal que aparezca mucha información en pantalla.
 Cada vez que quieran trabajar en el curso:
 
 1. Abrir **Miniforge Prompt**.
-2. Activar el entorno:
+2. Posicionarse en el directorio de trabajo
+
+    ```bash
+    (base) cd C:\blabla\curso_ds
+    ```
+3. Activar el entorno:
 
    ```bash
-   conda activate curso_ds
+   conda activate curso_ds_2025
    ```
 
-3. Abrir JupyterLab:
+4. Abrir JupyterLab:
 
    ```bash
    jupyter lab
