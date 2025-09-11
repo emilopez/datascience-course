@@ -53,7 +53,6 @@ Thumbs.db
 # ======================================
 # Datos temporales o grandes
 # ======================================
-*.csv
 *.tsv
 *.parquet
 *.feather
@@ -70,6 +69,9 @@ Thumbs.db
 *.gz
 *.bz2
 *.xz
+datos/historico-nombres.csv
+datos/historico-nombres.zip
+
 
 # ======================================
 # Archivos de configuración local
