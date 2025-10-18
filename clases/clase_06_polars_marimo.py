@@ -17,7 +17,7 @@ def _():
     import plotly.graph_objects as go
 
     import marimo as mo
-    return Path, mo, pl
+    return Path, go, mo, pl
 
 
 @app.cell(hide_code=True)
@@ -37,19 +37,36 @@ def _(mo):
 
 @app.cell
 def _(Path, pl):
-    loca_path = Path.cwd().parent / "datos" / "localidades.csv" 
+    loca_path = Path.cwd().parent / "repo_curso" /"datos" / "localidades.csv" 
     localidades_df = pl.read_csv(loca_path)
     localidades_df
     return (localidades_df,)
 
 
 @app.cell
-def _(localidades_df, pl):
+def _(localidades_df):
+    id_prov_nombres = localidades_df.select("provincia_id", "provincia_nombre").unique()
+    id_prov_nombres
+    return (id_prov_nombres,)
+
+
+@app.cell
+def _(id_prov_nombres, localidades_df, pl):
     # usemos provincia_id para agrupar las provincias, luego con un join agregamos el nombre
 
-    localidades_df.group_by("provincia_id").agg(
+    loca_por_prov_df = localidades_df.group_by("provincia_id").agg(
         pl.len().alias("cant_localidades")
+    ).join(
+        id_prov_nombres,
+        on="provincia_id",
+        how="left"
+    ).select(
+        "provincia_id",
+        "provincia_nombre",
+        "cant_localidades"
     )
+
+    loca_por_prov_df.write_csv("loca_por_prov.csv")
     return
 
 
@@ -61,8 +78,8 @@ def _(mo):
 
 @app.cell
 def _(Path, pl):
-    rio_salado_path = Path.cwd().parent / "datos" / "rio-salado-alturas-recreoR70-santo-tome.csv" 
-    rio_salado = pl.read_csv(rio_salado_path, separator=';', try_parse_dates=True)
+    rio_salado_path = Path.cwd().parent / "repo_curso" /"datos" / "rio-salado-alturas-recreoR70-santo-tome.csv" 
+    rio_salado = pl.read_csv(rio_salado_path,separator=';',try_parse_dates=True)
     return (rio_salado,)
 
 
@@ -84,7 +101,6 @@ def _(mo, rio_salado):
         f"""
         SELECT * FROM rio_salado
         WHERE Fecha = '2022-01-01'
-
         """
     )
     return
@@ -97,21 +113,37 @@ def _(mo):
     ## Actividades
     - Plotear altura del río Salado usando 2 trazas, una para cada sitio de medición (Ruta70 y Santo Tomé)
     - Calcular altura mínima, máxima y promedio por cada mes y plotearlo en otra figura
-
     """
     )
     return
 
 
-app._unparsable_cell(
-    r"""
+@app.cell
+def _(go, rio_salado):
     # plotear altura r salado
     fig_rsalado = go.Figure()
-    ... HACER ALUMNOS
 
-    """,
-    name="_"
-)
+    # Agregar la primera traza (RecreoR70)
+    fig_rsalado.add_trace(
+        go.Scatter(
+            x=rio_salado["Fecha"],
+            y=rio_salado["RecreoR70"],
+            mode="lines",
+            name="RecreoR70"
+        )
+    )
+
+    fig_rsalado.add_trace(
+        go.Scatter(
+            x=rio_salado["Fecha"],
+            y=rio_salado["SantoTome"],
+            mode="lines",
+            name="Santo Tomé"
+        )
+    )
+
+    fig_rsalado.show()
+    return
 
 
 @app.cell
@@ -140,13 +172,18 @@ def _(pl, rio_salado_anio_mes):
         pl.col("RecreoR70").min().alias("min_RecreoR70"),
         pl.col("RecreoR70").mean().alias("mean_RecreoR70"),
         pl.col("RecreoR70").max().alias("max_RecreoR70"),
-    
+
         # para Santo Tome
         pl.col("SantoTome").min().alias("min_santoto"),
         pl.col("SantoTome").mean().alias("mean_santoto"),
         pl.col("SantoTome").max().alias("max_santoto"),
-    
     )
+    return (rio_salado_stats,)
+
+
+@app.cell
+def _(rio_salado_stats):
+    rio_salado_stats
     return
 
 
